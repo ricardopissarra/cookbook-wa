@@ -1,6 +1,6 @@
 
 INSERT INTO recipe (id, name,ingredients, description) values
-(1, 'Carbonara', '3 large free-range egg yolks
+(100, 'Carbonara', '3 large free-range egg yolks
 40 g Parmesan cheese , plus extra to serve
 1 x 150 g piece of higher-welfare pancetta
 200 g dried spaghetti
@@ -14,7 +14,7 @@ Pick out and discard the garlic from the pan, then, reserving some of the cookin
 Add a splash of the cooking water and toss well, season with pepper, then pour in the egg mixture – the pan will help to cook the egg gently, rather than scrambling it. Toss well, adding more cooking water until it’s lovely and glossy.
 Serve with a grating of Parmesan and an extra twist of pepper.');
 INSERT INTO recipe (id, name,  ingredients, description) values
-(2, 'Bacalhau à Brás',  'Ingredientes para 4 porções:
+(101, 'Bacalhau à Brás',  'Ingredientes para 4 porções:
 
 4 batatas,
 2 lombos de bacalhau previamente demolhados,
@@ -31,7 +31,7 @@ Numa frigideira refogue a cebola cortada e o alho picado em azeite. Não se esqu
 
 A suas batatas de palha já devem estar prontas. Retire a folha de louro da mistura de cebola e adicione as batatas. Verta os ovos batidos também e mexa-os suavemente, permitindo que eles envolvam todos os ingredientes. O seu objetivo é obter um prato aveludado, não deixe os ovos cozinharem e secarem demasiado.');
 INSERT INTO recipe (id, name, ingredients, description) values
-(3, 'Cauliflower Fritters',  '1 head cauliflower cut into florets
+(102, 'Cauliflower Fritters',  '1 head cauliflower cut into florets
 2 tablespoons olive oil
 1 teaspoon salt
 ¾ to 1 cup breadcrumbs (I used GF bread crumbs)

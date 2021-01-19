@@ -8,9 +8,7 @@ export class Recipe {
     public id: number,
     public name: string,
     public ingredients: string,
-    public description: string,
-    public link: string,
-    public hasUrl: boolean
+    public description: string
   ) {}
 }
 
@@ -59,6 +57,14 @@ export class ListRecipeComponent implements OnInit {
         this.refreshRecipes();
       }
     )
+  }
+
+  addRecipe(){
+    this.router.navigate(['recipes/edit',-1]);
+  }
+
+  updateRecipe(id){
+    this.router.navigate(['recipes/edit',id]);
   }
   
 }

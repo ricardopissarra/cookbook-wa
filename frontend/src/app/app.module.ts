@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { DisplayRecipeComponent } from './display-recipe/display-recipe.component';
 import { FormsModule } from '@angular/forms';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     WelcomeComponent,
     ListRecipeComponent,
     SearchComponent,
-    DisplayRecipeComponent
+    DisplayRecipeComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

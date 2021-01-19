@@ -1,0 +1,24 @@
+<h1>Create or Update your recipe</h1>
+
+<div class="container">
+  <form #recipeForm="ngForm"  (ngSubmit)="saveRecipe()">
+    <fieldset class="form-group">
+      <label>Recipe Name</label>
+      <input type="text"
+      [(ngModel)]="recipe.name" name="name" required class="form-control">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Ingredients</label>
+      <input type="text"
+      [(ngModel)]="recipe.ingredients" name="ingredients" class="form-control"  required>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Description</label>
+      <input type="text"
+      [(ngModel)]="recipe.description" name="description" required class="form-control">
+    </fieldset>
+    <button type="sumbmit" class="btn btn-success">Save</button>
+  </form>
+</div>

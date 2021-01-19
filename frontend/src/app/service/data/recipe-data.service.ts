@@ -27,4 +27,12 @@ export class RecipeDataService {
     deleteRecipe(id){
       return this.http.delete(`${API_URL}/jpa/recipes/${id}`)
     }
+
+    createRecipe(recipe){
+      return this.http.post(`${API_URL}/jpa/recipes/edit/`, recipe);
+    }
+
+    updateRecipe(id, recipe){
+      return this.http.put(`${API_URL}/jpa/recipes/edit/${id}`, recipe);
+    }
 }
