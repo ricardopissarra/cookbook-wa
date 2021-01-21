@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
+
+h1 {
+    font-family: 'Bodoni Moda';
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.row{
+    padding-top: 20px;
+}
+
+.col-form-label{
+    margin-right: 30px;
+}
+
+.input-row{
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 5px 10px 5px 0;
+    padding: 5px;
+
+}

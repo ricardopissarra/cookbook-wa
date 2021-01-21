@@ -1,6 +1,12 @@
-h2 {
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap');
+
+h1 {
+    font-family: 'Bodoni Moda';
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
 div {
     text-align: left;
 }

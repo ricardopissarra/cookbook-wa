@@ -20,9 +20,14 @@
 
 <router-outlet></router-outlet> -->
 
-
-<app-menu></app-menu>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
+<header>
+  <app-menu></app-menu>
+</header>
+<body>
+  <div class="wrap">
+    <router-outlet></router-outlet>
+  </div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</body>

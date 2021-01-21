@@ -2,7 +2,14 @@
 <div class="container">
   <div class="alert alert-warning" *ngIf="message">{{message}}</div>
   <div>
-    <input type="text" [(ngModel)]=name>
-    <button (click)="searchByName(name)" class="btn btn-success">Search</button>
+    <p>Insert a recipe name (Case sensitive, start with a capital letter)</p>
+  </div>
+  <div>
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" [(ngModel)]=name>
+  </div>
+  <div>  
+    <button type="button" (click)="searchByName(name)" class="btn btn-outline-primary">
+      Search
+    </button>
   </div>
 </div>

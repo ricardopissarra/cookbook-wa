@@ -2,23 +2,32 @@
 
 <div class="container">
   <form #recipeForm="ngForm"  (ngSubmit)="saveRecipe()">
-    <fieldset class="form-group">
-      <label>Recipe Name</label>
-      <input type="text"
-      [(ngModel)]="recipe.name" name="name" required class="form-control">
-    </fieldset>
+    <div class="form row">
+      <label for="inputName3" class="col-sm2 col-form-label">Recipe Name</label>
+      <div class="col-sm10">
+        <input type="text" placeholder="Recipe name"
+        [(ngModel)]="recipe.name" name="name" required class="input-row">
+      </div>
+    </div>
 
-    <fieldset class="form-group">
-      <label>Ingredients</label>
-      <input type="text"
-      [(ngModel)]="recipe.ingredients" name="ingredients" class="form-control"  required>
-    </fieldset>
+    <div class="form row">
+      <label for="inputIngredients3" class="col-sm2 col-form-label">Recipe Ingredients</label>
+      <div class="col-sm10">
+        <input type="text" placeholder="Recipe ingredients"
+        [(ngModel)]="recipe.ingredients" name="ingredients" class="input-row"  required>
+      </div>
+    </div>  
+    
 
-    <fieldset class="form-group">
-      <label>Description</label>
-      <input type="text"
-      [(ngModel)]="recipe.description" name="description" required class="form-control">
-    </fieldset>
-    <button type="sumbmit" class="btn btn-success">Save</button>
+    <div class="form row">
+      <label for="inputDescription3" class="col-sm2 col-form-label">Recipe Description</label>
+      <div class="col-sm10">
+        <input type="text" placeholder="Recipe description"
+        [(ngModel)]="recipe.description" name="description" required class="input-row">
+      </div>
+    </div>
+    <div class="form row">
+      <button type="sumbmit" class="btn btn-primary">Save</button>
+    </div>
   </form>
 </div>
