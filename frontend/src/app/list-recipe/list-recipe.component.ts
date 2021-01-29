@@ -2,13 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecipeDataService } from '../service/data/recipe-data.service';
 
+export class Ingredient{
+  constructor(public quantity: string,
+    public name: string){
+
+  }
+}
+export class Step{
+  constructor(public text: string){
+ }
+}
 
 export class Recipe {
   constructor(
     public id: number,
     public name: string,
-    public ingredients: string,
-    public description: string
+    public ingredients: Ingredient[],
+    public steps: Step[]
   ) {}
 }
 
@@ -60,7 +70,7 @@ export class ListRecipeComponent implements OnInit {
   }
 
   addRecipe(){
-    this.router.navigate(['recipes/edit',-1]);
+    this.router.navigate(['recipes/add',-1]);
   }
 
   updateRecipe(id){

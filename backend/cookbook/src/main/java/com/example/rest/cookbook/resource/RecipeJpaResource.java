@@ -1,5 +1,7 @@
-package com.example.rest.cookbook.recipes;
+package com.example.rest.cookbook.resource;
 
+import com.example.rest.cookbook.model.Recipe;
+import com.example.rest.cookbook.repository.RecipeJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ public class RecipeJpaResource {
     @Autowired
     private RecipeJpaRepository recipeJpaRepository;
 
+
     @GetMapping("/jpa/recipes")
     public List<Recipe> getAllRecipes(){
         return recipeJpaRepository.findAll();
@@ -23,6 +26,7 @@ public class RecipeJpaResource {
 
     @GetMapping("/jpa/recipes/{id}")
     public Recipe getRecipeById(@PathVariable Long id){
+
         return recipeJpaRepository.findById(id).get();
     }
 
@@ -39,7 +43,7 @@ public class RecipeJpaResource {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/jpa/recipes/edit/")
+    @PostMapping("/jpa/recipes/add/")
     public ResponseEntity<Void> createRecipe(@RequestBody Recipe recipe){
         Recipe createRecipe = recipeJpaRepository.save(recipe);
 

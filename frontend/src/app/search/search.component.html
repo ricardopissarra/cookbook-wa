@@ -4,12 +4,14 @@
   <div>
     <p>Insert a recipe name (Case sensitive, start with a capital letter)</p>
   </div>
-  <div>
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" [(ngModel)]=name>
-  </div>
-  <div>  
-    <button type="button" (click)="searchByName(name)" class="btn btn-outline-primary">
-      Search
-    </button>
+  <div class="row">
+    <div class="col-sm-6">
+      <input type="search" class="form-control rounded" placeholder="Search..." aria-label="Search" [(ngModel)]=name>
+    </div>
+    <div>  
+      <button type="button" (click)="searchByName(name)" class="btn btn-outline-primary">
+        Search
+      </button>
+    </div>
   </div>
 </div>

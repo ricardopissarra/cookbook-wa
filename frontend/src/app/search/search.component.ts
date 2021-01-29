@@ -23,11 +23,12 @@ export class SearchComponent implements OnInit {
   searchByName(name){
     this.recipeData.getRecipeByName(name).subscribe(
       data => {
-        this.recipe = data
+        this.recipe = data;
+        if(this.recipe == null){
+          this.message = "There is no Recipe with that name!";
+        } else {
         this.router.navigateByUrl(`/recipes/search/${this.recipe.name}`);
-      },
-      error => { 
-        this.message = "No recipe with that name.";
+        }
       }
     )
   }

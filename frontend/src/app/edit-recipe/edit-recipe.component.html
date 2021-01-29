@@ -1,7 +1,7 @@
-<h1>Add a new Recipe</h1>
+<h1>Update {{recipe.name}}</h1>
 
 <div class="container">
-  <form #recipeForm="ngForm"  (ngSubmit)="saveRecipe()">
+  <form #recipeForm="ngForm"  (ngSubmit)="editRecipe()">
     <div class="form row">
       <label for="inputName3" class="col-sm-2 col-form-label">Recipe Name</label>
       <div class="col-sm-7">
@@ -10,31 +10,32 @@
       </div>
     </div>
 
-    <div class="form row">
+    <div class="form row" *ngFor="let ingredient of ingredients">
       <label for="inputIngredients3" class="col-sm-1 col-form-label ingredient">Ingredient</label>
       <div class="col-sm-3">
         <input type="text" placeholder="Ingredient"
-        [(ngModel)]="name" name="ingredient" class="form-control"  required>
+        [(ngModel)]="ingredient.name" name="ingredient" class="form-control"  required>
       </div>
       <label for="inputQuantity3" class="col-sm-1 col-form-label quantity">Quantity</label>
       <div class="col-sm-3">
         <input type="text" placeholder="Quantity"
-        [(ngModel)]="quantity" name="quantity" class="form-control"  required>
+        [(ngModel)]="ingredient.quantity" name="quantity" class="form-control"  required>
       </div>
       <div class="col-sm-1">
-        <button type="button" (click)="addIngredient(name, quantity)" class="btn btn-outline-primary">Add</button>
+        <button type="button" (click)="editIngredient(ingredient.name, ingredient.quantity, ingredient.id)" 
+        class="btn btn-outline-primary">Edit</button>
       </div>
     </div>  
     
 
-    <div class="form row">
+    <div class="form row" *ngFor="let step of steps">
       <label for="inputDescription3" class="col-sm-2 col-form-label">Recipe Steps</label>
       <div class="col-sm-7">
-        <input type="text" placeholder="Steps"
-        [(ngModel)]="text" name="description" required class="form-control">
+        <input type="text" placeholder="Step"
+        [(ngModel)]="step.text" name="description" required class="form-control">
       </div>
       <div class="col-sm-1">
-        <button type="button" (click)="addStep(text)" class="btn btn-outline-primary">Add</button>
+        <button type="button" (click)="editStep(step.text, step.id)" class="btn btn-outline-primary">Edit</button>
       </div>
     </div>
     <div class="form row">

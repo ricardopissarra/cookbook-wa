@@ -1,8 +1,30 @@
-<title>{{recipe.name}}</title>
 <h1>{{recipe.name}}</h1>
 <br><br>
-<h3>Ingredients</h3>
-<div class="container">{{recipe.ingredients}}</div>
-<br>
-<h3>Recipe</h3>
-<div class="container">{{recipe.description}}</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Ingredients</h3>
+        </div>
+        <div class="col-sm-8">
+            <h3>Steps</h3>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-sm-4">
+            <ul class="list-group">
+                <li *ngFor="let ingredient of ingredients" class="ingred"><b>{{ingredient.quantity}}</b>  {{ingredient.name}}<br><br></li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <td>
+                            <ol><li *ngFor="let step of steps" class="step">{{step.text}}<br><br></li></ol>
+                        </td>
+                    </tr>
+                </tbody>            
+            </table>
+        </div>
+    </div>
+</div>

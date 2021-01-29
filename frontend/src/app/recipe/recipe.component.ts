@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Recipe } from '../list-recipe/list-recipe.component';
+import { Ingredient, Recipe, Step } from '../list-recipe/list-recipe.component';
 import { RecipeDataService } from '../service/data/recipe-data.service';
 
 @Component({
@@ -10,8 +10,14 @@ import { RecipeDataService } from '../service/data/recipe-data.service';
 })
 export class RecipeComponent implements OnInit {
 
-  id: number
-  recipe: Recipe
+  id: number;
+  recipe: Recipe;
+  ingredients: Ingredient[] = [];
+  steps: Step[] = [];
+  quantity: string
+  name: string
+  text: string
+
   constructor(
     private recipeService: RecipeDataService,
     private router: Router,
@@ -21,31 +27,28 @@ export class RecipeComponent implements OnInit {
   ngOnInit() {
     this.id = this.aRoute.snapshot.params['id'];
 
-    this.recipe = new Recipe(this.id, '', '','');
+    this.recipe = new Recipe(this.id, '', this.ingredients, this.steps);
 
-    if(this.id != -1){
-      this.recipeService.getRecipeById(this.id).subscribe(
-        data => this.recipe = data
-      )
-    }
   }
 
   saveRecipe(){
-    if(this.id == -1){
-      this.recipeService.createRecipe(this.recipe).subscribe(
-        data => {
-          this.router.navigateByUrl("/recipes")
-          console.log("gothere")
-        }
-      )
-    } else {
-      this.recipeService.updateRecipe(this.id,this.recipe).subscribe(
-        data => {
-          this.router.navigateByUrl("/recipes")
-          console.log("gothere")
-        }
-      )
-    }
+    this.recipeService.createRecipe(this.recipe).subscribe(
+      data => {
+        this.router.navigateByUrl("/recipes")
+      }
+    )
   }
 
+  addIngredient(qty, iName){
+    var ing = new Ingredient(qty, iName);
+    this.ingredients.push(ing);
+    this.name = '';
+    this.quantity= '';
+  }
+
+  addStep(nText){
+    var s = new Step(nText);
+    this.steps.push(s);
+    this.text ='';
+  }
 }

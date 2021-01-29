@@ -13,6 +13,7 @@ import { SearchComponent } from './search/search.component';
 import { DisplayRecipeComponent } from './display-recipe/display-recipe.component';
 import { FormsModule } from '@angular/forms';
 import { RecipeComponent } from './recipe/recipe.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecipeComponent } from './recipe/recipe.component';
     ListRecipeComponent,
     SearchComponent,
     DisplayRecipeComponent,
-    RecipeComponent
+    RecipeComponent,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,

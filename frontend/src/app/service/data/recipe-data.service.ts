@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Recipe } from 'src/app/list-recipe/list-recipe.component';
+import { Ingredient, Recipe } from 'src/app/list-recipe/list-recipe.component';
 import { API_URL } from 'src/app/app.constants';
 
 @Injectable({
@@ -29,7 +29,7 @@ export class RecipeDataService {
     }
 
     createRecipe(recipe){
-      return this.http.post(`${API_URL}/jpa/recipes/edit/`, recipe);
+      return this.http.post(`${API_URL}/jpa/recipes/add/`, recipe);
     }
 
     updateRecipe(id, recipe){
